@@ -12,18 +12,6 @@ import matplotlib
 matplotlib.use("Agg")
 import seaborn as sns 
 
-def img_to_bytes(img_path):
-    img_bytes = Path(img_path).read_bytes()
-    encoded = base64.b64encode(img_bytes).decode()
-    return encoded
-
-    header_html = "<img src='data:image/png;base64,{}' class='img-fluid'>".format(
-    img_to_bytes("header.png")
-)
-st.markdown(
-    header_html, unsafe_allow_html=True,
-)
-
 def main():
 	"""Semi Automated ML App with Streamlit """
 
